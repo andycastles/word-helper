@@ -39,14 +39,15 @@ function replaceGap(template, replacements) {
 }
 
 function help() {
-    console.log(`Synax: node index.mjs [TEMPLATE] [OPTIONS]
+    console.log(`
+  Usage: node index.mjs [options] <template>
 
-  In TEMPLATE specify letters in their position or '.' for unknown letter.
+  In <template> specify letters in their position or '.' for unknown letter.
 
-  OPTIONS:
-  -h --help     Show this help
-  -s --skip     Letters which cannot be used
-  -r --require  Letters which must be used
+  Options:
+  -h, --help .............. Show this help
+  -s, --skip <letters> .... Specify which letters cannot be used
+  -r --require <letters> .. Specify which letters must be used
 `);
 }
 
