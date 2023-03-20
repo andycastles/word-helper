@@ -5,15 +5,7 @@ Helper program for solving Wordle.
 
 ## Usage
 
+Inline help is available with -h or --help arguments:
 ```
-Synax: node index.mjs [TEMPLATE] [OPTIONS]
-
-In [TEMPLATE] specify letters in their position or '.' for unknown letter.
-
-OPTIONS:
-  -h --help            Show this help
-  -s <letters>
-  --skip <letters>     Letters which cannot be used
-  -r <letters>
-  --require  <letters> Letters which must be used
+Synax: node index.mjs -h
  ```
