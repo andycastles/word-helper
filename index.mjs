@@ -15,6 +15,7 @@ const supportedOptions = {
         third: ['3'],
         fourth: ['4'],
         fifth: ['5'],
+        count: ['c'],
         word: ['w']
     },
     boolean: ['w', 'h'],
@@ -27,7 +28,8 @@ const supportedOptions = {
         third: 'Specify which letters which cannot be in the 3rd position',
         fourth: 'Specify which letters which cannot be in the 4th position',
         fifth: 'Specify which letters which cannot be in the 5th position',
-        word: 'Only show combinations which are valid words'
+        word: 'Only show combinations which are valid words',
+        count: 'Show count of valid words'
     }
 }
 
@@ -47,7 +49,7 @@ function replaceGap(template, firstGo) {
             }
         })) {
             if (!word || isWord(template)) line += template + ' '
-        } else {
+            if (isWord(template)) count++
         }
 
     if (firstGo) console.log(line)
@@ -86,6 +88,7 @@ function help() {
   -s, --skip <letters> .... Specify which letters cannot be used
   -r, --require <letters> . Specify which letters must be used
   -w, --word .............. Only show combinations which are valid words
+  -c, --count ............. Show count of valid words
   -1, --first <letters> ... Specify which letters cannot be in the first position
   -2, --second <letters> .. Specify which letters cannot be in the second position
   -3, --third <letters> ... Specify which letters cannot be in the third position
@@ -111,8 +114,9 @@ const options = getopts(process.argv.slice(2), supportedOptions)
 
 const invalidSwitches = invalidArgs(options, supportedOptions)
 
-let template, require, skip, line, word
+let template, require, skip, line, word, showCount
 let first, second, third, fourth, fifth
+let count = 0
 
 if (options.help) {
     help()
@@ -135,6 +139,7 @@ if (options.help) {
     fourth = (options.fourth || '').toUpperCase().split('')
     fifth = (options.fifth || '').toUpperCase().split('')
     word = options.word || false
+    showCount = options.count || false
 
     console.log('Template: ', template)
     console.log('Require:  ',require.join(' ') || '(no required letters)')
@@ -149,6 +154,11 @@ if (options.help) {
 
     console.log('\nPossible words:')
     replaceGap(template, true)
+
+    if(showCount) {
+        console.log(`
+${count} possible valid words.`)
+    }
 }
 
 
