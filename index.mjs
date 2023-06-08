@@ -38,7 +38,7 @@ function isWord(word) {
 }
 
 function replaceGap(template, firstGo) {
-    if (template.indexOf('.') < 0) {
+    if (template.indexOf('_') < 0) {
         let t = template
         if (require.every(letter => {
             if (t.indexOf(letter) < 0) {
@@ -57,7 +57,7 @@ function replaceGap(template, firstGo) {
     }
     for(let letter of letters) {
         if (skip.indexOf(letter) < 0) {
-            let position = template.indexOf('.')
+            let position = template.indexOf('_')
             let skipPosition = []
             switch(position) {
                 case 0: skipPosition = first; break;
@@ -67,7 +67,7 @@ function replaceGap(template, firstGo) {
                 case 4: skipPosition = fifth; break;
             }
             if (skipPosition.indexOf(letter) < 0) {
-                replaceGap(template.replace('.', letter))
+                replaceGap(template.replace('_', letter))
                 if (firstGo) {
                     if (line) console.log(line)
                     line = ''
@@ -81,7 +81,7 @@ function help() {
     console.log(`
   Usage: node index.mjs [options] <template>
 
-  In <template> specify letters in their position or '.' for unknown letter.
+  In <template> specify letters in their position or '_' for unknown letter.
 
   Options:
   -h, --help .............. Show this help
