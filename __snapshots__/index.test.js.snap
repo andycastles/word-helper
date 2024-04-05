@@ -1,43 +1,22 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`wordle utility > correct output with all letters specified 1`] = `
-"Template:  SHITE
+"Template:  GREAT
 Require:   (no required letters)
 Skip:      (no skipped letters)
 
 Possible words:
-SHITE"
+GREAT"
 `;
 
 exports[`wordle utility > correct output with first letter specified 1`] = `
-"Command failed: node index.mjs -1 abcdefghijklmnopqrstuvwxy
-error: missing required argument 'template'
+"Template:  __XXX
+Require:   (no required letters)
+Skip:      (no skipped letters)
+Cannot be in position 1:      B C D E F G H I J K L M N O P Q R S T U V W X Y Z
 
-Usage: wordle [options] <template>
-
-Wordle helper utility
-
-Arguments:
-  template                 Specify letters in their position or '_' for unknown
-                           letter
-
-Options:
-  -s, --skip <letters>     Specify which letters cannot be used (default: "")
-  -r, --require <letters>  Specify which letters must be used (default: "")
-  -w, --word               Only show combinations which are valid words
-  -c, --count              Show count of valid words
-  -1, --first <letters>    Specify which letters cannot be in the first
-                           position (default: "")
-  -2, --second <letters>   Specify which letters cannot be in the second
-                           position (default: "")
-  -3, --third <letters>    Specify which letters cannot be in the third
-                           position (default: "")
-  -4, --fourth <letters>   Specify which letters cannot be in the fourth
-                           position (default: "")
-  -5, --fifth <letters>    Specify which letters cannot be in the fifth
-                           position (default: "")
-  -h, --help               display help for command
-"
+Possible words:
+AAXXX ABXXX ACXXX ADXXX AEXXX AFXXX AGXXX AHXXX AIXXX AJXXX AKXXX ALXXX AMXXX ANXXX AOXXX APXXX AQXXX ARXXX ASXXX ATXXX AUXXX AVXXX AWXXX AXXXX AYXXX AZXXX"
 `;
 
 exports[`wordle utility > generates error and help without params 1`] = `
