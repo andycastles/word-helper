@@ -71,8 +71,6 @@ program
     .option('-5, --fifth <letters>', 'Specify which letters cannot be in the fifth position', '')
     .showHelpAfterError()
     .action((template, options) => {
-        console.log(options, process.argv);
-
         template = template.toUpperCase();
         require = (options.require || '').toUpperCase().split('');
         skip = (options.skip || '').toUpperCase().split('');
