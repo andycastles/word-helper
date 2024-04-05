@@ -1,15 +1,18 @@
 {
   "name": "word-helper",
   "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
+  "main": "index.mjs",
+  "bin": {
+    "wordle": "node index.mjs"
+  },
   "scripts": {
+    "wordle": "node index.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "getopts": "^2.3.0"
+    "commander": "^12.0.0"
   }
 }
