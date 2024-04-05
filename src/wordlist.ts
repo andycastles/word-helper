@@ -1,4 +1,4 @@
-export const wordlist = [
+export const wordlist:string[] = [
 "abase",
 "abate",
 "abbey",
@@ -2307,4 +2307,4 @@ export const wordlist = [
 "zebra",
 "zesty",
 "zonal",
-]
+];
